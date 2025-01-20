@@ -1,0 +1,177 @@
+<!-- !+Tab 기초구성-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="fade">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboume.html">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 맨 위로 가는 버튼 -->
+    <button id="back-to-top">↑</button>
+
+
+
+ <!--  -->
+    <div class="frame"> 
+        <nav class="navigator">
+            <h3 class="site-name"></h3>
+            <h1 style=" padding-top: 10%;" class="portfolio-title">Ahn Jaewon <br>developer</h1>
+            <ul></ul>
+        </nav>
+        <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+     <br>
+        <div class="dashboard">
+            <div class="recent-works">
+                <img  src="23.jpeg" alt="Recent Work Image" class="recent-image">
+                <div class="recent-text">
+                        <h1 style="font-size: 50px; color: gainsboro ">develope <br></h1>
+                         <h1 style="color: gainsboro;">He is a developer who constantly grows and challenges himself, I am a developer who can develop iOS, Android, and web.</h1><br>
+                         
+                </div>
+            </div>
+            <br>
+  
+
+                <h1 style="color: gainsboro; font-size: 50px; padding-top: 30px;">Introduction</h1>
+                <h2 style="color: gainsboro; padding-top: 30px;">Programming is always fun.<br>
+                    The pleasure of completing new tasks and <br>exploring new programming 
+                    It makes me happy.</h2><br>
+                 <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                <h2 style="color: gainsboro; padding-top: 30px;">✔︎iOS Android</h2>
+                <h4 style="color: gainsboro; font-size: 20px;">I developed iOS and Android,It was developed with Swift and Kotlin,I also studied Flutter personally.</h4>
+                <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                <h2 style="color: gainsboro; padding-top: 30px;">✔︎Web Develop</h2>
+                <h4 style="color: gainsboro; font-size: 20px;">Using Java, HTML, and CSS Basic Web Site opening is possible.</h4>
+                <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;"><br>
+                <a href="project.html">
+                <button class="custom-button" style="width: 350px;" onclick="handleClick()">PROJECT 👀</button>
+                </a>
+        </div>
+    </div>
+
+    
+    <!--  -->
+    
+    <section id="contact-section" class="Contact">
+        <div class="contact-container">
+            <div class="text-section">
+                <h1 style="font-size: 55px; color: gainsboro;">CONTACT</h1><br>
+                <h1 style="font-size: 20px; color: gainsboro;">I'm looking for a company where I can improve my skills and learn.</h1>
+                <!-- <p style="color: gainsboro;">スキルを磨いて学べる会社を探しています。</p> -->
+                <h1 style="font-size: 45px; color: gainsboro;">ajw0376@gmail.com</h1><br>
+                <a href="Contact.html">
+                <button class="custom-button" onclick="handleClick()">CONTACT.. 👀</button>
+            </a>
+                </div>
+            <img src="77.jpeg" alt="Recent Work Image" class="recent-image3">
+        </div>
+        <br>
+        
+        
+    </section>
+    
+    <footer class="work-footer">
+        <p style="color: gainsboro;">AHN JAE WON</p>
+        <p style="color: gainsboro;">PORTFOLIO</p>
+        <p style="color: gainsboro;">© 2025 Ahn, Jae-Won. All Rights Reserved.</p>
+    </footer>
+
+    <!--script-->
+
+    
+    <script>
+        !function() {
+          function detectDevTool(allow) {
+            if (isNaN(+allow)) allow = 100;
+            var start = +new Date(); 
+            
+            // 그냥 시간을 체크하는 방법으로 개발자 도구를 감지
+            var end = +new Date(); 
+            if (isNaN(start) || isNaN(end) || end - start > allow) {
+              // 개발자 도구가 open 된것을 감지했을때 실행할 코드 삽입
+              console.log("개발자 도구가 열렸습니다.");
+              // 여기에 감지된 후 실행할 코드를 추가
+            }
+          }
+      
+          if (window.attachEvent) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                detectDevTool();
+              window.attachEvent('onresize', detectDevTool);
+              window.attachEvent('onmousemove', detectDevTool);
+              window.attachEvent('onfocus', detectDevTool);
+              window.attachEvent('onblur', detectDevTool);
+            } else {
+                setTimeout(argument.callee, 0);
+            }
+          } else {
+            window.addEventListener('load', detectDevTool);
+            window.addEventListener('resize', detectDevTool);
+            window.addEventListener('mousemove', detectDevTool);
+            window.addEventListener('focus', detectDevTool);
+            window.addEventListener('blur', detectDevTool);
+          }
+        }();
+      </script>
+<script>
+    // 페이지 로드 시 페이드인 효과 적용
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+        }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+    });
+
+    // 링크 클릭 시 페이드아웃 효과 적용
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            // 페이지 이동이 필요한 경우에만 실행
+            if (!href.startsWith('#') && href !== '') {
+                e.preventDefault(); // 기본 동작 방지
+                document.body.classList.remove('in'); // 페이드아웃 효과
+                setTimeout(() => {
+                    window.location.href = href; // 페이지 이동
+                }, 800); // 페이드아웃 지속 시간
+            }
+        });
+    });
+</script>
+
+<script>
+    // 버튼 요소 선택
+    const backToTopButton = document.getElementById("back-to-top");
+
+    // 페이지 스크롤이 일정 거리 이상 내려가면 버튼 보이기
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = "block"; // 버튼 표시
+        } else {
+            backToTopButton.style.display = "none"; // 버튼 숨기기
+        }
+    };
+
+    // 버튼 클릭 시 페이지 상단으로 부드럽게 스크롤
+    backToTopButton.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // 부드럽게 스크롤
+        });
+    };
+</script>
+
+    
+</body>
+</html>

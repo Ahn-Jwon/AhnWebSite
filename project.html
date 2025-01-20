@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <link rel="stylesheet" type="text/css" href="project.css">
+</head>
+
+<body  class="fade">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboume.html">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1 style="padding-top: 30%;"  >Projects</h1>
+<hr style="padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
+
+<div class="recent-image-container">
+    <div class="recent-image-item">
+        <a href="vexk.html">
+            <img class="recent-image" src="VewxkImage/vexk.png" alt="Image 1">
+        </a>
+        <p class="recent-image-text">Vexk App : iOS/Android</p>
+        <p class="recent-image-text2">It's a bitcoin exchange app, iOS and Android. I used Swift and Kotlin.</p>
+    </div>
+    <div class="recent-image-item">
+        <a href="Tinder.html">
+        <img class="recent-image" src="TinderImage/Tinder.png" alt="Image 2">
+        </a>
+        <p class="recent-image-text">Tinder : iOS</p>
+        <p class="recent-image-text2">This is the iOS Tinder App. You can match and chat.</p>
+    </div>
+    <div class="recent-image-item">
+        <a href="steam.html">
+        <img class="recent-image" src="SteamImage/steam.png" alt="Image 3">
+         </a>
+        <p class="recent-image-text">Steam : iOS</p>
+        <p class="recent-image-text2">Bringing iOS App Steam open APi to show current popularity games.</p>
+    </div>
+    <div class="recent-image-item">
+        <a href="storyboard.html">
+        <img class="recent-image" src="Storyboard/todo.png" alt="Image 4">
+        </a>
+        <p class="recent-image-text">To-Do : iOS</p>
+        <p class="recent-image-text2">CRUD was implemented as SQLite using the foundation Swift Storyboard.</p>
+    </div>
+    <div class="recent-image-item">
+        <a href="Flutter.html">
+        <img class="recent-image" src="Flutter/flutter.png" alt="Image 5">
+    </a>
+        <p class="recent-image-text">Flutter : Flutter</p>
+        <p class="recent-image-text2">Self-diagnosis and telemedicine with doctors after linking with diagnostic data.</p>
+    </div>
+    <div class="recent-image-item">
+        <a href="Web.html">
+        <img class="recent-image" src="Spring/JavaWeb.png" alt="Image 6">
+    </a>
+        <p class="recent-image-text">Java Spring Web : Java</p>
+        <p class="recent-image-text2">It is a web shopping mall site where you can purchase the items you need for your pet.</p>
+    </div>
+</div>
+
+
+<script>
+    // 페이지 로드 시 페이드인 효과 적용
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+        }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+    });
+
+    // 링크 클릭 시 페이드아웃 효과 적용
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            // 페이지 이동이 필요한 경우에만 실행
+            if (!href.startsWith('#') && href !== '') {
+                e.preventDefault(); // 기본 동작 방지
+                document.body.classList.remove('in'); // 페이드아웃 효과
+                setTimeout(() => {
+                    window.location.href = href; // 페이지 이동
+                }, 800); // 페이드아웃 지속 시간
+            }
+        });
+    });
+</script>
+
+<footer class="work-footer">
+    <p style="color: gainsboro;">AHN JAE WON</p>
+    <p style="color: gainsboro;">PORTFOLIO</p>
+    <p style="color: gainsboro;">© 2025 Ahn, Jae-Won. All Rights Reserved.</p>
+</footer>
+    
+</body>
+</html>

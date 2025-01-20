@@ -1,0 +1,198 @@
+body {
+    background-color: black;
+    padding: 1% 8%; /* 위아래는 0, 좌우는 8% */
+}
+
+
+body.fade {
+    opacity: 0; /* 초기 불투명도 */
+    transition: opacity 0.8s ease-in-out; /* 천천히 나타나는 효과 */
+}
+
+body.fade.in {
+    opacity: 1; /* 화면이 완전히 나타남 */
+}
+
+.frame {
+    /* margin: 30px 150px; */
+    display: flex;
+    flex-direction: column;
+}
+
+/* navigator */
+
+.navigator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+h2 {
+    background-color: black; 
+    color: white; 
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+    
+}
+
+
+h2:hover {
+    color: blueviolet; 
+}
+
+li  {
+
+    align-self: center;
+    margin: 0px;
+    margin-left:  15px;
+}
+
+ul {
+    margin: 0;
+    font-size: 20px;
+}
+
+.site-name {
+    margin: 0;
+    font-family: "Montserrat",  sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+
+header {
+    position: fixed; /* 화면에 고정 */
+    top: 0; 
+    left: 0; 
+    width: 100%; /* 헤더를 화면 너비에 맞춤 */
+    background-color: black; /* 배경색 설정 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    text-align: right; 
+    padding: 10px 0; 
+}
+
+.nav-menu {
+    list-style: none; /* 리스트 불릿 제거 */
+    padding: 0; 
+    padding-right: 10%;
+    margin: 0; 
+    display: flex; /* 플렉스 박스 활성화 */
+    justify-content: right; /* 메뉴 중앙 정렬 */
+    gap: 100px; /* 항목 간격 추가 */
+}
+
+.nav-menu li a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: gainsboro; /* 링크 색상 설정 */
+    font-size: 35px; 
+    font-weight: bold; 
+    transition: color 0.3s ease; /* 색상 전환 효과 */
+}
+
+.nav-menu li a:hover {
+    color: blueviolet; 
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+}
+
+/* 전체 컨테이너 스타일 */
+.frame {
+    font-family: Arial, sans-serif;
+}
+
+
+/* recent-works를 Flexbox로 설정 */
+.recent-works {
+    display: flex; /* 가로로 배치 */
+    align-items: center; /* 세로 정렬 */
+    gap: 150px; /* 이미지와 텍스트 사이의 간격 */
+    padding-bottom: 10%;
+}
+
+
+/* 이미지 스타일 */
+.recent-image {
+    width: 15%; /* 이미지 크기 */
+    padding-top: 0%;
+    filter: grayscale(100%); /* 흑백 효과 적용 */
+    display: flex; /* Flexbox 활성화 */
+    border-radius: 100%; /* 원형 이미지 */
+    aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+    object-fit: cover; /* 이미지 크기 조정 */
+}
+
+/* 호버 시 색상 복구 */
+.recent-image:hover {
+    filter: grayscale(0%); /* 원래 색상 복구 */
+}
+
+
+.recent-text p {
+    margin: 0;
+}
+
+.skills {
+    display: flex;  /* flexbox로 요소들을 한 줄로 배치 */
+    gap: 0px;  /* 요소들 간의 간격을 지정 */
+    color: gainsboro;  /* 글자 색상 설정 */
+}
+
+.skillshidden{
+    display: flex;  /* flexbox로 요소들을 한 줄로 배치 */
+    gap: 0px;  /* 요소들 간의 간격을 지정 */
+    cursor: pointer; /* 클릭 가능하도록 커서 변경 */
+    color: gainsboro; /* 기본 글씨 색상 */
+    padding-bottom: 1%; /* 푸터 높이만큼 여백 추가 */
+}
+
+
+.hidden-content {
+    height: 0; /* 초기 높이를 0으로 설정 */
+    opacity: 0; /* 초기 상태에서 투명 */
+    overflow: hidden; /* 넘치는 콘텐츠 숨기기 */
+    transition: height 0.4s ease, opacity 0.4s ease; /* 부드러운 전환 효과 */
+}
+
+.hidden-content.visible {
+    height: auto; /* 자동으로 높이를 맞춤 */
+    opacity: 1; /* 보이도록 설정 */
+}
+
+/* 애니메이션을 자연스럽게 보이게 하기 위해 콘텐츠를 감싸는 컨테이너 */
+.hidden-content-inner {
+    padding: 10px 0; /* 여백 추가 */
+    background-color: #f9f9f9;
+}
+
+.skills p {
+    margin: 0;  /* p 요소의 기본 여백을 제거 */
+    margin: 0 10px 0;
+    font-size: 20px;  /* 글자 크기 설정 */
+    color: gainsboro;  /* 글자 색상 설정 */
+    padding-bottom: 5%; /* 푸터 높이만큼 여백 추가 */
+}
+
+.work-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10px;
+    background-color: black;
+    padding: 0px;
+    gap: 20px;
+    
+}
+
+.work-footer h1 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.work-footer p {
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+

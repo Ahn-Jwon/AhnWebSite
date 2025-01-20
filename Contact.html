@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Contact.css">
+</head>
+<body class="fade">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboume.html">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="padding-top: 30%;"  >Contact</h1>
+    <hr style="padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
+    
+    <div class="recent-image-container">
+        <div class="recent-image-item">
+                <img class="recent-image" src="431.jpeg" alt="Image 1">
+            <p class="recent-image-text">Mobile platform : iOS/Android</p>
+            <p class="recent-image-text2">Programming experience with Swift on iOS 
+                SwiftUi's View configuration design is possible, 
+                I also have maintenance experience on Android.</p>
+        </div>
+        <div class="recent-image-item">
+            <img class="recent-image" src="77.jpeg" alt="Image 2">
+            <p class="recent-image-text">Web</p>
+            <p class="recent-image-text2">Server-side Implementation with Java Use the MySQL DB, The overall configuration of HTML and CSS is possible.</p>
+        </div>
+        </div>
+        <hr style="padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
+        <h1 class="employment-text">an offer of employment<br> and interviews</h1>
+        <p class="recent-image-text">📧 ajw0376@gmail.com</p>
+        <p style="font-size: 40px; padding-bottom: 15%;" class="recent-image-text2">I have experience in two areas, mobile and web. I have a desire to improve my skills and always want to learn. 
+            I really want to join your company and grow even more.</p>
+    </div>
+
+    <script>
+        // 페이지 로드 시 페이드인 효과 적용
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+            }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+        });
+    
+        // 링크 클릭 시 페이드아웃 효과 적용
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                const href = link.getAttribute('href');
+                // 페이지 이동이 필요한 경우에만 실행
+                if (!href.startsWith('#') && href !== '') {
+                    e.preventDefault(); // 기본 동작 방지
+                    document.body.classList.remove('in'); // 페이드아웃 효과
+                    setTimeout(() => {
+                        window.location.href = href; // 페이지 이동
+                    }, 800); // 페이드아웃 지속 시간
+                }
+            });
+        });
+    </script>
+
+<footer class="work-footer">
+    <p style="color: gainsboro;">AHN JAE WON</p>
+    <p style="color: gainsboro;">PORTFOLIO</p>
+    <p style="color: gainsboro;">© 2025 Ahn, Jae-Won. All Rights Reserved.</p>
+</footer>
+    
+
+</body>
+</html>

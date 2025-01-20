@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUTME</title>
+    <link rel="stylesheet" type="text/css" href="aboutme.css">
+</head>
+<body  class="fade">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboume.html">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <hr style="border: 0; border-top: 1px solid gainsboro; width: 80%;"> -->
+    <div>
+        <div class="recent-works">
+            <div class="recent-text">
+                <h1 style="padding-top: 30%; font-size: 80px; color: gainsboro">About me </h1>
+                <hr style=" padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                <img style="padding-bottom: 10px;" src="ahnjaewon.jpeg" alt="Recent Work Image" class="recent-image">
+                <p style="color: gainsboro;">a place where one lives : Tokyo</p>
+                <h1 style="font-size: 30px; color: gainsboro">AHN JAE WON 🇰🇷 </h1>
+                <h1 style="font-size: 25px; color: gainsboro;">I worked as an iOS developer for a year in Korea.<br> New Environment I want to work with you to achieve bigger dreams in Japan.</h1>
+                <h1 style="font-size: 25px; color: gainsboro;">I am always enthusiastic and active in everything, and I will persevere in solving problems.</h1>
+                    <div class="skills">
+                        <h1 style="font-size: 50px;  ">SKILLS <br></h1>
+                    </div>
+                    <!-- SWIFT  -->
+                    <h3 style="font-size: 15px; color: gainsboro; ">SKILL mouse click ✔︎<br></h3>
+                    <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                    <div class="skillshidden" onclick="toggleContent()">
+                        <h2>SWIFT</h2>
+                        <h2 style="padding-left: 39%;">Swift Uikit / SwiftUi</h2>
+                    </div>
+                    <div id="hidden-content" class="hidden-content">
+                        <h3 style="color: gainsboro;">I developed a Bitcoin exchange app and a matching app on iOS's platformOn the Android platform, we did maintenance on the Bitcoin Exchange app.</h3>
+                        <li style="color: gainsboro; margin: 13px;">Configure View with SwiftUi</li>
+                        <li style="color: gainsboro; margin: 13px;">Configure View with Swift Storyboard</li>
+                        <li style="color: gainsboro; margin: 13px;">Api communication available</li>
+                        <li style="color: gainsboro; margin: 13px;">Socket communication enabled</li>
+                        <li style="color: gainsboro; margin: 13px;">Library: Alamofire, SwiftSTOMP</li>
+                        <li style="color: gainsboro; margin: 13px;">DB: Firebase, SQLite, Oracle</li>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+
+                    <!-- Kotlin -->
+                    <div class="skillshidden" onclick="toggleContentkotin()">
+                        <h2>Kotlin</h2>
+                        <h2 style="padding-left: 40%;">Jetpack Compose<h2>
+                    </div>
+                    <div id="hidden-content2" class="hidden-content">
+                        <h3 style="color: gainsboro;">We have developed maintenance and additional features for the Bitcoin exchange app on the Android platform.</h3>
+                        <li style="color: gainsboro; margin: 13px;">Jetpack Compose Library View Configuration</li>
+                        <li style="color: gainsboro; margin: 13px;">Maintenance</li>
+                        <li style="color: gainsboro; margin: 13px;">Additional features and API index adjustment</li>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                    
+                    <!-- WEB -->
+                    <div class="skillshidden" onclick="toggleContentWeb()">
+                        <h2>WEB</h2>
+                        <h2 style="padding-left: 41%;">Java / HTML / CSS</h2>
+                    </div>
+                    <div id="hidden-content3" class="hidden-content">
+                        <h3 style="color: gainsboro;">We have developed a pet shopping mall site and a pet studio photo studio site.</h3>
+                        <li style="color: gainsboro; margin: 13px;">Java Server Side Interworking and Configuration</li>
+                        <li style="color: gainsboro; margin: 13px;">HTML Default View Configuration</li>
+                        <li style="color: gainsboro; margin: 13px;">Utilize CSS</li>
+                        <li style="color: gainsboro; margin: 13px;">JavaScript Asynchronous Processing and View Animation</li>
+                        <li style="color: gainsboro; margin: 13px;">Create a DB MySQL query</li>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+
+                    <!-- Data -->
+                    <div class="skillshidden" onclick="toggleContentDate()">
+                        <h2>Data Analysis Language</h2>
+                        <h2 style="padding-left: 26%;">R</h2>
+                    </div>
+                    <div id="hidden-content4" class="hidden-content">
+                        <h3 style="color: gainsboro;">Analysis of Apple Mobile Market in Japan 
+                            Using mobile sales data from 2019 to 2024 
+                            Sales Share and Apple Share in the Current Japanese Mobile Market (Correlation)</h3>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
+                    
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 히든 내용 -->
+    <script>
+        function toggleContent() {
+            const content = document.getElementById("hidden-content");
+            if (content.classList.contains("visible")) {
+                // 숨기기
+                content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
+                requestAnimationFrame(() => {
+                    content.style.height = "0"; // 높이를 0으로 줄이기
+                });
+                content.classList.remove("visible");
+            } else {
+                // 보이기
+                content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
+                content.classList.add("visible");
+                content.addEventListener(
+                    "transitionend",
+                    () => {
+                        content.style.height = "auto"; // 높이를 자동으로 설정
+                    },
+                    { once: true }
+                );
+            }
+        }
+
+        function toggleContentkotin() {
+            const content = document.getElementById("hidden-content2");
+            if (content.classList.contains("visible")) {
+                // 숨기기
+                content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
+                requestAnimationFrame(() => {
+                    content.style.height = "0"; // 높이를 0으로 줄이기
+                });
+                content.classList.remove("visible");
+            } else {
+                // 보이기
+                content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
+                content.classList.add("visible");
+                content.addEventListener(
+                    "transitionend",
+                    () => {
+                        content.style.height = "auto"; // 높이를 자동으로 설정
+                    },
+                    { once: true }
+                );
+            }
+        }
+
+        function toggleContentWeb() {
+            const content = document.getElementById("hidden-content3");
+            if (content.classList.contains("visible")) {
+                // 숨기기
+                content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
+                requestAnimationFrame(() => {
+                    content.style.height = "0"; // 높이를 0으로 줄이기
+                });
+                content.classList.remove("visible");
+            } else {
+                // 보이기
+                content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
+                content.classList.add("visible");
+                content.addEventListener(
+                    "transitionend",
+                    () => {
+                        content.style.height = "auto"; // 높이를 자동으로 설정
+                    },
+                    { once: true }
+                );
+            }
+        }
+
+        function toggleContentDate() {
+            const content = document.getElementById("hidden-content4");
+            if (content.classList.contains("visible")) {
+                // 숨기기
+                content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
+                requestAnimationFrame(() => {
+                    content.style.height = "0"; // 높이를 0으로 줄이기
+                });
+                content.classList.remove("visible");
+            } else {
+                // 보이기
+                content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
+                content.classList.add("visible");
+                content.addEventListener(
+                    "transitionend",
+                    () => {
+                        content.style.height = "auto"; // 높이를 자동으로 설정
+                    },
+                    { once: true }
+                );
+            }
+        }
+    </script> 
+    <!-- 여기까지 -->
+
+    <script>
+        // 페이지 로드 시 페이드인 효과 적용
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+            }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+        });
+    
+        // 링크 클릭 시 페이드아웃 효과 적용
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                const href = link.getAttribute('href');
+                // 페이지 이동이 필요한 경우에만 실행
+                if (!href.startsWith('#') && href !== '') {
+                    e.preventDefault(); // 기본 동작 방지
+                    document.body.classList.remove('in'); // 페이드아웃 효과
+                    setTimeout(() => {
+                        window.location.href = href; // 페이지 이동
+                    }, 800); // 페이드아웃 지속 시간
+                }
+            });
+        });
+    </script>
+    
+    <!-- <script> 현재 사용안함
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault(); 
+        console.log('Anchor clicked:', this.getAttribute('href')); 
+        const targetId = this.getAttribute('href'); 
+        const targetElement = document.querySelector(targetId); 
+
+        if (targetElement) {
+            console.log('Scrolling to:', targetElement); 
+            targetElement.scrollIntoView({
+                behavior: 'smooth', 
+                block: 'start', 
+            });
+        } else {
+            console.error('Target not found:', targetId); 
+        }
+    });
+});
+    </script> -->
+
+
+    <footer class="work-footer">
+        <p style="color: gainsboro;">AHN JAE WON</p>
+        <p style="color: gainsboro;">PORTFOLIO</p>
+        <p style="color: gainsboro;">© 2025 Ahn, Jae-Won. All Rights Reserved.</p>
+    </footer>
+    
+    
+</body>
+</html>

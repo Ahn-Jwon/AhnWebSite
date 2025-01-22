@@ -119,7 +119,7 @@ header {
 
 /* 모바일 반응형 (아이폰12프로 화면에 맞게) */
 @media screen and (max-width: 450px) {
-    
+
     header {
         position: fixed; /* 화면에 고정 */
         top: 0; 
@@ -139,7 +139,7 @@ header {
     }
     
     .nav-menu {
-        gap: 20px; /* 항목 간격 좁히기 */
+        gap: 25px; /* 항목 간격 좁히기 */
         text-align: center; /* 메뉴 텍스트 중앙 정렬 */
     }
 

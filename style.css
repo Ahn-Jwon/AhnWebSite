@@ -18,7 +18,7 @@ body.fade.in {
     flex-direction: column;
 }
 
-@media screen and (max-width: 450px) { 
+@media screen and (max-width: 460px) { 
     body {
         background-color: black;
         padding: 1% 2%; /* 위아래는 0, 좌우는 8% */
@@ -48,7 +48,7 @@ body.fade.in {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 460px) {
     .portfolio-title {
         color: gainsboro;
         font-size: 45px;
@@ -127,7 +127,7 @@ header {
 
 
 /* 모바일 반응형 (아이폰12프로 화면에 맞게) */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 460px) {
     .hamburger-menu {
         display: block; /* 모바일에서 햄버거 버튼 표시 */
     }
@@ -264,7 +264,7 @@ header {
 }
 
 
-@media screen and (max-width: 450px) { 
+@media screen and (max-width: 460px) { 
 .frame {
     /* padding: 140px; */
     font-family: Arial, sans-serif;
@@ -439,7 +439,7 @@ header {
     border-color: white; /* 호버 시 테두리 색상 변경 */
 }
 
-@media screen and (max-width: 450px) { 
+@media screen and (max-width: 460px) { 
     .Contact {
         display: flex; /* Flexbox 활성화 */
         flex-direction: column; /* 기본값: 가로 정렬 */
@@ -516,7 +516,7 @@ header {
     font-size: 13px;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 460px) {
     .work-footer {
         display: flex;
         flex-direction: row;

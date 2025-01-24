@@ -10,6 +10,7 @@
 <body  class="fade">
     <header>
         <nav>
+            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="aboume.html">ABOUT ME</a></li>
@@ -19,7 +20,7 @@
         </nav>
     </header>
 
-<h1 style="padding-top: 30%;"  >Projects</h1>
+<h1 class="title-text">Projects</h1>
 <hr style="padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
 
 <div class="recent-image-container">
@@ -67,6 +68,14 @@
     </div>
 </div>
 
+
+    <!-- 반응형 헤더 -->
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
+        }
+            </script>
 
 <script>
     // 페이지 로드 시 페이드인 효과 적용

@@ -9,6 +9,7 @@
 <body class="fade">
     <header>
         <nav>
+            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="aboume.html">ABOUT ME</a></li>
@@ -41,6 +42,17 @@
         <p style="font-size: 40px; padding-bottom: 15%;" class="recent-image-text2">I have experience in two areas, mobile and web. I have a desire to improve my skills and always want to learn. 
             I really want to join your company and grow even more.</p>
     </div>
+
+
+
+    <!-- 반응형 헤더 -->
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
+        }
+            </script>
+
 
     <script>
         // 페이지 로드 시 페이드인 효과 적용

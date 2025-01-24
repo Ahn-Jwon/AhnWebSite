@@ -18,6 +18,15 @@ body.fade.in {
     flex-direction: column;
 }
 
+@media screen and (max-width: 460px) { 
+    body {
+        background-color: black;
+        padding: 1% 2%; /* 위아래는 0, 좌우는 8% */
+    }
+}
+
+
+/*----1.header----*/  
 .navigator {
     display: flex;
     flex-direction: row;
@@ -36,14 +45,7 @@ ul {
     margin: 0;
 }
 
-.site-name {
-    margin: 0;
-    font-family: "Montserrat",  sans-serif;
-    font-size: 24px;
-    color: #C2B4Ab;
-}
 
-/*----header----*/  
 header {
     position: fixed; /* 화면에 고정 */
     top: 0; 
@@ -78,7 +80,53 @@ header {
     color: blueviolet; 
     text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
 }
-/*----header----*/  
+
+.hamburger-menu {
+    display: none; /* 기본적으로 햄버거 버튼 숨김 */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* 모바일 반응형 (아이폰12프로 화면에 맞게) */
+@media screen and (max-width: 460px) {
+    .hamburger-menu {
+        display: block; /* 모바일에서 햄버거 버튼 표시 */
+    }
+
+    .navigator {
+        flex-direction: column; /* 세로로 배치 */
+        justify-content: center; /* 중앙 정렬 */
+        padding: 0 5%; /* 좌우 여백 축소 */
+    }
+    
+    .nav-menu {
+        display: none; /* 기본적으로 메뉴 숨김 */
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 50px; /* 헤더 아래에 메뉴 표시 */
+        left: 0;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.show {
+        display: flex; /* 햄버거 버튼 클릭 시 메뉴 표시 */
+    }
+
+    .nav-menu li a {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+    }
+}
+/*----1.header 여기까지 ----*/  
 
 .recent-image-container {
     display: grid; /* Grid 레이아웃 활성화 */
@@ -88,6 +136,7 @@ header {
     padding-bottom: 10%;
 }
 
+
 /* 이미지와 텍스트 그룹 스타일 */
 .recent-image-item {
     display: flex; /* Flexbox 활성화 */
@@ -95,6 +144,7 @@ header {
     align-items: left; /* 내용 중앙 정렬 */
     text-align: left; /* 텍스트 정렬 */
 }
+
 
 /* 이미지 스타일 */
 .recent-image {
@@ -105,6 +155,7 @@ header {
     filter: brightness(50%); /* 밝기 조절 (80%로 약간 어둡게 설정) */
     transition: filter 0.3s ease; /* 부드러운 전환 효과 */
 }
+
 
 /* 호버 시 밝기 복구 */
 .recent-image:hover {

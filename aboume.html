@@ -38,11 +38,11 @@
                     <h3 style="font-size: 15px; color: gainsboro; ">SKILL mouse click ✔︎<br></h3>
                     <hr style="border: 0; border-top: 1px solid gainsboro; width: 100%;">
                     <div class="skillshidden" onclick="toggleContent()">
-                        <h2 class="swift-text">SWIFT</h2>
+                        <h2 class="swift-text">SWIFT <span id="arrow-swift">&#9660;</span></h2>
                         <h2 class="swiftui-text">Swift Uikit / SwiftUi</h2>
                     </div>
                     <div id="hidden-content" class="hidden-content">
-                        <h3 style="color: gainsboro;">I developed a Bitcoin exchange app and a matching app on iOS's platformOn the Android platform, we did maintenance on the Bitcoin Exchange app.</h3>
+                        <h3 style="color: gainsboro;">I developed a Bitcoin exchange app and a matching app on iOS's platform. On the Android platform, we did maintenance on the Bitcoin Exchange app.</h3>
                         <li class="content-li">Configure View with SwiftUi</li>
                         <li class="content-li">Configure View with Swift Storyboard</li>
                         <li class="content-li">Api communication available</li>
@@ -54,7 +54,7 @@
 
                     <!-- Kotlin -->
                     <div class="skillshidden" onclick="toggleContentkotin()">
-                        <h2 class="Kotlin-text">Kotlin</h2>
+                        <h2 class="Kotlin-text">Kotlin <span id="arrow-kotlin">&#9660;</span></h2>
                         <h2 class="compose-text">Jetpack Compose<h2>
                     </div>
                     <div id="hidden-content2" class="hidden-content">
@@ -67,7 +67,7 @@
                     
                     <!-- WEB -->
                     <div class="skillshidden" onclick="toggleContentWeb()">
-                        <h2 class="web-text">WEB</h2>
+                        <h2 class="web-text">WEB <span id="arrow-web">&#9660;</span></h2>
                         <h2 class="jhc-text">Java / HTML / CSS</h2>
                     </div>
                     <div id="hidden-content3" class="hidden-content">
@@ -82,7 +82,7 @@
 
                     <!-- Data -->
                     <div class="skillshidden" onclick="toggleContentDate()">
-                        <h2 class="data-text">Data Language</h2>
+                        <h2 class="data-text">Data Language <span id="arrow-data">&#9660;</span></h2>
                         <h2 class="r-text">R</h2>
                     </div>
                     <div id="hidden-content4" class="hidden-content">
@@ -111,7 +111,9 @@
     <!-- 히든 내용 -->
     <script>
         function toggleContent() {
-            const content = document.getElementById("hidden-content");
+                const content = document.getElementById("hidden-content");
+                const arrow = document.getElementById("arrow-swift");
+
             if (content.classList.contains("visible")) {
                 // 숨기기
                 content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
@@ -119,6 +121,7 @@
                     content.style.height = "0"; // 높이를 0으로 줄이기
                 });
                 content.classList.remove("visible");
+                arrow.innerHTML = "&#9660;"; // 아래로 향한 화살표
             } else {
                 // 보이기
                 content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
@@ -130,11 +133,14 @@
                     },
                     { once: true }
                 );
+                arrow.innerHTML = "&#9650;"; // 위로 향한 화살표
             }
         }
 
         function toggleContentkotin() {
-            const content = document.getElementById("hidden-content2");
+          const content = document.getElementById("hidden-content2");
+          const arrow = document.getElementById("arrow-kotlin");
+
             if (content.classList.contains("visible")) {
                 // 숨기기
                 content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
@@ -142,6 +148,7 @@
                     content.style.height = "0"; // 높이를 0으로 줄이기
                 });
                 content.classList.remove("visible");
+                arrow.innerHTML = "&#9660;"; // 아래로 향한 화살표
             } else {
                 // 보이기
                 content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
@@ -153,11 +160,14 @@
                     },
                     { once: true }
                 );
+                arrow.innerHTML = "&#9650;"; // 위로 향한 화살표
             }
         }
 
         function toggleContentWeb() {
             const content = document.getElementById("hidden-content3");
+            const arrow = document.getElementById("arrow-web");
+
             if (content.classList.contains("visible")) {
                 // 숨기기
                 content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
@@ -165,6 +175,7 @@
                     content.style.height = "0"; // 높이를 0으로 줄이기
                 });
                 content.classList.remove("visible");
+                arrow.innerHTML = "&#9660;"; // 아래로 향한 화살표
             } else {
                 // 보이기
                 content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
@@ -176,11 +187,14 @@
                     },
                     { once: true }
                 );
+                arrow.innerHTML = "&#9650;"; // 위로 향한 화살표
             }
         }
 
         function toggleContentDate() {
             const content = document.getElementById("hidden-content4");
+            const arrow = document.getElementById("arrow-data");
+
             if (content.classList.contains("visible")) {
                 // 숨기기
                 content.style.height = content.scrollHeight + "px"; // 현재 높이로 설정
@@ -188,6 +202,7 @@
                     content.style.height = "0"; // 높이를 0으로 줄이기
                 });
                 content.classList.remove("visible");
+                arrow.innerHTML = "&#9660;"; // 아래로 향한 화살표
             } else {
                 // 보이기
                 content.style.height = content.scrollHeight + "px"; // 콘텐츠 높이 계산
@@ -199,6 +214,7 @@
                     },
                     { once: true }
                 );
+                arrow.innerHTML = "&#9650;"; // 위로 향한 화살표
             }
         }
     </script> 

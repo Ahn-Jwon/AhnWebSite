@@ -134,7 +134,10 @@ function toggleMenu() {
         }();
       </script>
 <script>
-    // 페이지 로드 시 페이드인 효과 적용
+
+
+
+// 페이지 로드 시 페이드인 효과 적용
 // DOMContentLoaded 이벤트 처리 (페이드인 효과 적용)
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
@@ -144,9 +147,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // pageshow 이벤트 처리 (캐시 복원 처리)
 window.addEventListener("pageshow", function(event) {
-    if (event.persisted) { 
-        document.body.style.display = "block"; 
-        document.body.classList.add('in');
+    if (event.persisted) { // 캐시에서 복원된 경우
+        document.body.style.display = "block"; // body를 보이도록 설정
+        document.body.classList.add('in'); // 페이드인 클래스 추가
     }
 });
 
@@ -155,11 +158,11 @@ document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', e => {
         const href = link.getAttribute('href');
         // 페이지 이동이 필요한 경우에만 실행
-        if (!href.startsWith('#') && href !== '') {
+        if (href && !href.startsWith('#')) { // href가 존재하고 #으로 시작하지 않을 때만 실행
             e.preventDefault(); // 기본 동작 방지
             document.body.classList.remove('in'); // 페이드아웃 효과
             setTimeout(() => {
-                window.location.href = href; // 페이지 이동
+                window.location.href = href; // 실제 href 값으로 페이지 이동
             }, 800); // 페이드아웃 지속 시간
         }
     });

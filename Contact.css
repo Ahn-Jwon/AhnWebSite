@@ -21,7 +21,7 @@ body.fade.in {
 @media screen and (max-width: 460px) { 
     body {
         background-color: black;
-        padding: 1% 2%; /* 위아래는 0, 좌우는 8% */
+        padding: 1% 0; /* 위아래는 0, 좌우는 8% */
     }
 }
 
@@ -180,11 +180,109 @@ header {
     padding-bottom: 70px;
 }
 
+.recent-image-text3 {
+    font-size: 30px; /* 텍스트 크기 */
+    color: gainsboro; /* 텍스트 색상 */
+    line-height: 1.2; /* 줄 간격 줄이기 */
+    margin: 0; /* 기본 여백 제거 */
+    padding-bottom: 70px;
+}
+
 h1 {
     color: gainsboro;
     font-size: 80px;
 }
 
+
+
+.recent-image-text {
+    font-size: 40px;
+    text-decoration: none; /* 기본 상태에서 밑줄 제거 */
+    transition: font-size 0.3s ease, text-decoration 0.3s ease;
+    text-decoration: underline; /* 밑줄 추가 */
+  }
+  
+
+  .employment-text {
+    font-size: 65px;
+    text-decoration: none; /* 기본 상태에서 밑줄 제거 */
+    transition: font-size 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  .employment-text:hover {
+    color: blueviolet;
+    text-decoration: underline; /* 밑줄 추가 */
+  }
+
+  @media screen and (max-width: 460px) {
+
+    .recent-image-container {
+        display: grid; /* Grid 레이아웃 활성화 */
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); /* 컬럼 자동 조정 */
+        gap: 15px; /* 아이템 간 간격 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        padding-bottom: 10%;
+    }
+    
+    
+    /* 이미지와 텍스트 그룹 스타일 */
+    .recent-image-item {
+        display: flex; /* Flexbox 활성화 */
+        flex-direction: column; /* 세로 정렬 */
+        align-items: left; /* 내용 중앙 정렬 */
+        text-align: left; /* 텍스트 정렬 */
+    }
+    
+    /* 이미지 스타일 */
+    .recent-image {
+        width: 100%; /* 부모 크기 꽉 채움 */
+        object-fit: cover; /* 박스 안에 이미지 맞춤 */
+        border-radius: 0; /* 네모난 모양 */
+        margin-bottom: 10px; /* 텍스트와의 간격 */
+        filter: brightness(50%); /* 밝기 조절 (80%로 약간 어둡게 설정) */
+        transition: filter 0.3s ease; /* 부드러운 전환 효과 */
+    }
+
+    .recent-image-text {
+        font-size: 15px; /* 텍스트 크기 */
+        color: gainsboro; /* 텍스트 색상 */
+        line-height: 1.2; /* 줄 간격 줄이기 */
+        margin: 0; /* 기본 여백 제거 */
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .recent-image-text2 {
+        font-size: 15px; /* 텍스트 크기 */
+        color: gainsboro; /* 텍스트 색상 */
+        line-height: 1.2; /* 줄 간격 줄이기 */
+        margin: 0; /* 기본 여백 제거 */
+        padding-bottom: 70px;
+    }
+
+    .recent-image-text3 {
+        font-size: 20px; /* 텍스트 크기 */
+        color: gainsboro; /* 텍스트 색상 */
+        line-height: 1.2; /* 줄 간격 줄이기 */
+        margin: 0; /* 기본 여백 제거 */
+        padding-bottom: 70px;
+    }
+
+    .employment-text {
+        font-size: 35px;
+        text-decoration: none; /* 기본 상태에서 밑줄 제거 */
+        transition: font-size 0.3s ease, text-decoration 0.3s ease;
+      }    
+  }
+
+
+
+
+
+
+
+/* 푸터 */
 .work-footer {
     display: flex;
     flex-direction: row;
@@ -195,7 +293,6 @@ h1 {
     background-color: black;
     padding: 0px;
     gap: 20px;
-    
 }
 
 .work-footer h1 {
@@ -208,24 +305,31 @@ h1 {
     font-size: 13px;
 }
 
-.recent-image-text {
-    font-size: 40px;
-    text-decoration: none; /* 기본 상태에서 밑줄 제거 */
-    transition: font-size 0.3s ease, text-decoration 0.3s ease;
-    text-decoration: underline; /* 밑줄 추가 */
-  }
-  
+@media screen and (max-width: 460px) {
+    .work-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 10px;
+        background-color: black;
+        padding: 0px;
+        gap: 20px;
+    }
+    
+    .work-footer h1 {
+        margin: 0;
+        font-size: 12px;
+    }
+    
+    .work-footer p {
+        margin: 5px 0 0;
+        font-size: 10px;
+    }
+}
 
 
-  .employment-text {
-    font-size: 65px;
-    text-decoration: none; /* 기본 상태에서 밑줄 제거 */
-    transition: font-size 0.3s ease, text-decoration 0.3s ease;
-  }
-  
-  .employment-text:hover {
-    color: blueviolet;
-    text-decoration: underline; /* 밑줄 추가 */
-  }
+
 
   

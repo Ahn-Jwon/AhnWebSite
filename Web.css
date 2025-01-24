@@ -2,7 +2,6 @@ body {
     background-color: black;
     padding: 1% 8%; /* 위아래는 0, 좌우는 8% */
 }
-
 body.fade {
     opacity: 0; /* 초기 불투명도 */
     transition: opacity 0.8s ease-in-out; /* 천천히 나타나는 효과 */
@@ -18,49 +17,23 @@ body.fade.in {
     flex-direction: column;
 }
 
-/* navigator */
-
+/*----1.header----*/  
 .navigator {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-}
-
-h1 {
-    color: gainsboro;
-    font-size: 80px;
-}
-
-h2 {
-    background-color: black; 
-    color: white; 
-    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
-    
-}
-
-
-h2:hover {
-    color: blueviolet; 
+    padding-top: 10%;
 }
 
 li  {
-
+    display: inline;
     align-self: center;
-    margin: 0px;
-    margin-left:  15px;
+    margin: 0;
+    margin-left: 15px;
 }
 
 ul {
     margin: 0;
-    font-size: 20px;
-}
-
-.site-name {
-    margin: 0;
-    font-family: "Montserrat",  sans-serif;
-    font-size: 24px;
-    color: white;
 }
 
 
@@ -99,7 +72,54 @@ header {
     text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
 }
 
+.hamburger-menu {
+    display: none; /* 기본적으로 햄버거 버튼 숨김 */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
 
+
+/* 모바일 반응형 (아이폰12프로 화면에 맞게) */
+@media screen and (max-width: 460px) {
+    .hamburger-menu {
+        display: block; /* 모바일에서 햄버거 버튼 표시 */
+    }
+
+    .navigator {
+        flex-direction: column; /* 세로로 배치 */
+        justify-content: center; /* 중앙 정렬 */
+        padding: 0 5%; /* 좌우 여백 축소 */
+    }
+    
+    .nav-menu {
+        display: none; /* 기본적으로 메뉴 숨김 */
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 50px; /* 헤더 아래에 메뉴 표시 */
+        left: 0;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.show {
+        display: flex; /* 햄버거 버튼 클릭 시 메뉴 표시 */
+    }
+
+    .nav-menu li a {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+    }
+}
+/*----1.header 여기까지 ----*/  
+
+/* 푸터 */
 .work-footer {
     display: flex;
     flex-direction: row;
@@ -110,19 +130,43 @@ header {
     background-color: black;
     padding: 0px;
     gap: 20px;
-    
 }
 
 .work-footer h1 {
     margin: 0;
     font-size: 14px;
-    color: gray;
 }
 
 .work-footer p {
     margin: 5px 0 0;
     font-size: 13px;
-    color: gray;
 }
+
+@media screen and (max-width: 460px) {
+    .work-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 10px;
+        background-color: black;
+        padding: 0px;
+        gap: 20px;
+    }
+    
+    .work-footer h1 {
+        margin: 0;
+        font-size: 12px;
+    }
+    
+    .work-footer p {
+        margin: 5px 0 0;
+        font-size: 10px;
+    }
+}
+
+
+
 
 

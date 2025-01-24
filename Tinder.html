@@ -9,6 +9,7 @@
 <body  class="fade">
     <header>
         <nav>
+            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="aboume.html">ABOUT ME</a></li>
@@ -37,7 +38,12 @@
             </footer>
 
 
-
+    <script>
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('show');
+}
+    </script>
     
 <script>
     // 페이지 로드 시 페이드인 효과 적용

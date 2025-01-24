@@ -9,6 +9,7 @@
 <body  class="fade">
     <header>
         <nav>
+            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
             <ul class="nav-menu">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="aboume.html">ABOUT ME</a></li>
@@ -17,6 +18,8 @@
             </ul>
         </nav>
     </header>
+
+
     <h1 style= " color: gainsboro;  padding-top: 30%;" >Vexk App</h1>
     <hr style="padding-bottom: 50px; border: 0; border-top: 1px solid gainsboro; width: 100%;">
 
@@ -42,6 +45,15 @@
                 <p style="color: gainsboro;">© 2025 Ahn, Jae-Won. All Rights Reserved.</p>
             </footer>
 
+
+
+   <!-- 반응형 헤더 -->
+   <script>
+    function toggleMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('show');
+    }
+    </script>
 
 
     

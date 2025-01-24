@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>ABOUTME</title>
     <link rel="stylesheet" type="text/css" href="aboutme.css">
 </head>
@@ -221,49 +222,38 @@
     <!-- 여기까지 -->
 
     <script>
-        // 페이지 로드 시 페이드인 효과 적용
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.body.classList.add('in'); // 0.1초 후 페이드인 실행
-            }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
-        });
-    
-        // 링크 클릭 시 페이드아웃 효과 적용
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', e => {
-                const href = link.getAttribute('href');
-                // 페이지 이동이 필요한 경우에만 실행
-                if (!href.startsWith('#') && href !== '') {
-                    e.preventDefault(); // 기본 동작 방지
-                    document.body.classList.remove('in'); // 페이드아웃 효과
-                    setTimeout(() => {
-                        window.location.href = href; // 페이지 이동
-                    }, 800); // 페이드아웃 지속 시간
-                }
-            });
-        });
-    </script>
-    
-    <!-- <script> 현재 사용안함
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-        e.preventDefault(); 
-        console.log('Anchor clicked:', this.getAttribute('href')); 
-        const targetId = this.getAttribute('href'); 
-        const targetElement = document.querySelector(targetId); 
+ // DOMContentLoaded 이벤트 처리 (페이드인 효과 적용)
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+    }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+});
 
-        if (targetElement) {
-            console.log('Scrolling to:', targetElement); 
-            targetElement.scrollIntoView({
-                behavior: 'smooth', 
-                block: 'start', 
-            });
-        } else {
-            console.error('Target not found:', targetId); 
+// pageshow 이벤트 처리 (캐시 복원 처리)
+window.addEventListener("pageshow", function(event) {
+    if (event.persisted) { 
+        document.body.style.display = "block"; 
+        document.body.classList.add('in');
+    }
+});
+
+// 링크 클릭 시 페이드아웃 효과 적용
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        // 페이지 이동이 필요한 경우에만 실행
+        if (!href.startsWith('#') && href !== '') {
+            e.preventDefault(); // 기본 동작 방지
+            document.body.classList.remove('in'); // 페이드아웃 효과
+            setTimeout(() => {
+                window.location.href = href; // 페이지 이동
+            }, 800); // 페이드아웃 지속 시간
         }
     });
 });
-    </script> -->
+
+    </script>
+    
 
 
     <footer class="work-footer">

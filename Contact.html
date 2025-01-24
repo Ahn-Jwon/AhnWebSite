@@ -54,27 +54,36 @@
 
 
     <script>
-        // 페이지 로드 시 페이드인 효과 적용
-        window.addEventListener('DOMContentLoaded', () => {
+     // DOMContentLoaded 이벤트 처리 (페이드인 효과 적용)
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.body.classList.add('in'); // 0.1초 후 페이드인 실행
+    }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
+});
+
+// pageshow 이벤트 처리 (캐시 복원 처리)
+window.addEventListener("pageshow", function(event) {
+    if (event.persisted) { 
+        document.body.style.display = "block"; 
+        document.body.classList.add('in'); 
+    }
+});
+
+// 링크 클릭 시 페이드아웃 효과 적용
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        // 페이지 이동이 필요한 경우에만 실행
+        if (!href.startsWith('#') && href !== '') {
+            e.preventDefault(); // 기본 동작 방지
+            document.body.classList.remove('in'); // 페이드아웃 효과
             setTimeout(() => {
-                document.body.classList.add('in'); // 0.1초 후 페이드인 실행
-            }, 100); // 딜레이를 줘서 항상 초기 상태를 보장
-        });
-    
-        // 링크 클릭 시 페이드아웃 효과 적용
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', e => {
-                const href = link.getAttribute('href');
-                // 페이지 이동이 필요한 경우에만 실행
-                if (!href.startsWith('#') && href !== '') {
-                    e.preventDefault(); // 기본 동작 방지
-                    document.body.classList.remove('in'); // 페이드아웃 효과
-                    setTimeout(() => {
-                        window.location.href = href; // 페이지 이동
-                    }, 800); // 페이드아웃 지속 시간
-                }
-            });
-        });
+                window.location.href = href; // 페이지 이동
+            }, 800); // 페이드아웃 지속 시간
+        }
+    });
+});
+
     </script>
 
 <footer class="work-footer">

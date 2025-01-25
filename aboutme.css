@@ -3,10 +3,14 @@ body {
     padding: 1% 8%; /* 위아래는 0, 좌우는 8% */
 }
 
+body.fade {
+    opacity: 0; /* 초기 불투명도 */
+    transition: opacity 0.8s ease-in-out; /* 천천히 나타나는 효과 */
+}
 
-
-
-
+body.fade.in {
+    opacity: 1; /* 화면이 완전히 나타남 */
+}
 
 .frame {
     /* margin: 30px 150px; */
@@ -23,7 +27,6 @@ body {
 
 
 
-
 /*----1.header----*/  
 .navigator {
     display: flex;
@@ -36,13 +39,12 @@ li  {
     display: inline;
     align-self: center;
     margin: 0;
-    margin-left: 15px;
+    margin-left: 50px;
 }
 
 ul {
     margin: 0;
 }
-
 
 header {
     position: fixed; /* 화면에 고정 */
@@ -52,24 +54,23 @@ header {
     background-color: black; /* 배경색 설정 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
     z-index: 1000; /* 다른 요소 위에 표시 */
-    text-align: right; 
+    text-align: center; 
     padding: 10px 0; 
 }
 
 .nav-menu {
     list-style: none; /* 리스트 불릿 제거 */
-    padding: 0; 
-    padding-right: 10%;
+    padding: 0 8%; 
     margin: 0; 
     display: flex; /* 플렉스 박스 활성화 */
     justify-content: right; /* 메뉴 중앙 정렬 */
-    gap: 100px; /* 항목 간격 추가 */
+    gap: 20%; /* 항목 간격 추가 */
 }
 
 .nav-menu li a {
     text-decoration: none; /* 링크 밑줄 제거 */
     color: gainsboro; /* 링크 색상 설정 */
-    font-size: 35px; 
+    font-size: 30px; 
     font-weight: bold; 
     transition: color 0.3s ease; /* 색상 전환 효과 */
 }
@@ -137,7 +138,6 @@ header {
 
 /* recent-works를 Flexbox로 설정 */
 .recent-works {
-    display: flex; /* 가로로 배치 */
     align-items: center; /* 세로 정렬 */
     gap: 150px; /* 이미지와 텍스트 사이의 간격 */
     padding-bottom: 10%;
@@ -146,13 +146,13 @@ header {
 
 /* 이미지 스타일 */
 .recent-image {
-    width: 15%; /* 이미지 크기 */
+    width: 100%; /* 이미지 크기 */
     padding-top: 0%;
     padding-bottom: 10px;
-    filter: grayscale(100%); /* 흑백 효과 적용 */
+    
     display: flex; /* Flexbox 활성화 */
-    border-radius: 100%; /* 원형 이미지 */
-    aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+    
+    aspect-ratio: 2 / 1; /* 정사각형 비율 유지 */
     object-fit: cover; /* 이미지 크기 조정 */
 }
 
@@ -168,7 +168,7 @@ header {
 .recentTextAboutme {
     color: gainsboro;
     font-size: 80px;
-    padding-top: 30%
+    padding-top: 35%
 }
 
 .recentTextAhn {
@@ -194,9 +194,10 @@ header {
 .swift-text {
     background-color: black; 
     color: white; 
-    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+    text-decoration: none; /* 기본 텍스트 밑줄 제거 */
+    position: relative; /* ::after를 위한 설정 */
 }
-
 .swiftui-text {
     padding-left: 39%;
     background-color: black; 
@@ -208,6 +209,24 @@ header {
     color: blueviolet; 
 }
 
+.swift-text::after {
+    content: ""; /* 가상 요소 생성 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: gainsboro; /* 밑줄 색상 */
+    transform: scaleX(0); /* 기본 상태에서 밑줄 숨김 */
+    transform-origin: left; /* 애니메이션 시작점 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+
+.swift-text:hover::after {
+    transform: scaleX(1); /* 마우스를 올렸을 때 밑줄 사라짐 */
+}
+
 .swiftui-text:hover {
     color: blueviolet; 
 }
@@ -216,7 +235,9 @@ header {
 .Kotlin-text {
     background-color: black; 
     color: white; 
-    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+    text-decoration: none; /* 기본 텍스트 밑줄 제거 */
+    position: relative; /* ::after를 위한 설정 */ 
 }
 
 .compose-text {
@@ -224,6 +245,23 @@ header {
     background-color: black; 
     color: white; 
     text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+}
+
+.Kotlin-text::after {
+    content: ""; /* 가상 요소 생성 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: gainsboro; /* 밑줄 색상 */
+    transform: scaleX(0); /* 기본 상태에서 밑줄 숨김 */
+    transform-origin: left; /* 애니메이션 시작점 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+.Kotlin-text:hover::after {
+    transform: scaleX(1); /* 마우스를 올렸을 때 밑줄 사라짐 */
 }
 
 .Kotlin-text:hover {
@@ -234,10 +272,14 @@ header {
     color: blueviolet; 
 }
 
+
+
 .web-text {
     background-color: black; 
     color: white; 
-    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+    text-decoration: none; /* 기본 텍스트 밑줄 제거 */
+    position: relative; /* ::after를 위한 설정 */ 
 }
 
 .jhc-text {
@@ -245,6 +287,23 @@ header {
     background-color: black; 
     color: white; 
     text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+}
+
+.web-text::after {
+    content: ""; /* 가상 요소 생성 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: gainsboro; /* 밑줄 색상 */
+    transform: scaleX(0); /* 기본 상태에서 밑줄 숨김 */
+    transform-origin: left; /* 애니메이션 시작점 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+.web-text:hover::after {
+    transform: scaleX(1); /* 마우스를 올렸을 때 밑줄 사라짐 */
 }
 
 .web-text:hover {
@@ -258,14 +317,33 @@ header {
 .data-text {
     background-color: black; 
     color: white; 
-    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+    text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */
+    text-decoration: none; /* 기본 텍스트 밑줄 제거 */
+    position: relative; /* ::after를 위한 설정 */ 
 }
 
 .r-text {
-    padding-left: 32%;
+    padding-left: 34%;
     background-color: black; 
     color: white; 
     text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
+}
+
+.data-text::after {
+    content: ""; /* 가상 요소 생성 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: gainsboro; /* 밑줄 색상 */
+    transform: scaleX(0); /* 기본 상태에서 밑줄 숨김 */
+    transform-origin: left; /* 애니메이션 시작점 */
+    transition: transform 0.3s ease; /* 부드러운 효과 */
+}
+
+.data-text:hover::after {
+    transform: scaleX(1); /* 마우스를 올렸을 때 밑줄 사라짐 */
 }
 
 .data-text:hover {
@@ -333,7 +411,6 @@ header {
     }
 
     .swiftui-text {
-        
         font-size: 17px;
         padding-left: 38%;
         background-color: black; 
@@ -380,7 +457,6 @@ header {
 
     .r-text {
         font-size: 17px;
-        
         padding-left: 24%;
         background-color: black; 
         color: white; 
@@ -388,13 +464,11 @@ header {
     }
 
     .recent-image {
-        width: 40%; /* 이미지 크기 */
+        width: 100%; /* 이미지 크기 */
         padding-top: 0%;
         padding-bottom: 10px;
-        filter: grayscale(100%); /* 흑백 효과 적용 */
         display: flex; /* Flexbox 활성화 */
-        border-radius: 100%; /* 원형 이미지 */
-        aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+        aspect-ratio: 2 / 1; /* 정사각형 비율 유지 */
         object-fit: cover; /* 이미지 크기 조정 */
     }
 

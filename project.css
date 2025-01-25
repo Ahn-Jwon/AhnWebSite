@@ -26,7 +26,6 @@ body.fade.in {
 }
 
 
-
 /*----1.header----*/  
 .navigator {
     display: flex;
@@ -39,13 +38,12 @@ li  {
     display: inline;
     align-self: center;
     margin: 0;
-    margin-left: 15px;
+    margin-left: 50px;
 }
 
 ul {
     margin: 0;
 }
-
 
 header {
     position: fixed; /* 화면에 고정 */
@@ -55,24 +53,23 @@ header {
     background-color: black; /* 배경색 설정 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
     z-index: 1000; /* 다른 요소 위에 표시 */
-    text-align: right; 
+    text-align: center; 
     padding: 10px 0; 
 }
 
 .nav-menu {
     list-style: none; /* 리스트 불릿 제거 */
-    padding: 0; 
-    padding-right: 10%;
+    padding: 0 8%; 
     margin: 0; 
     display: flex; /* 플렉스 박스 활성화 */
     justify-content: right; /* 메뉴 중앙 정렬 */
-    gap: 100px; /* 항목 간격 추가 */
+    gap: 20%; /* 항목 간격 추가 */
 }
 
 .nav-menu li a {
     text-decoration: none; /* 링크 밑줄 제거 */
     color: gainsboro; /* 링크 색상 설정 */
-    font-size: 35px; 
+    font-size: 30px; 
     font-weight: bold; 
     transition: color 0.3s ease; /* 색상 전환 효과 */
 }
@@ -135,8 +132,6 @@ header {
     padding-top: 30%;
 }
 
-
-/* 부모 요소 스타일 그리드*/ 
 /* 부모 요소 스타일 */
 .recent-image-container {
     display: grid; /* Grid 레이아웃 활성화 */
@@ -144,6 +139,7 @@ header {
     gap: 15px; /* 아이템 간 간격 */
     justify-content: center; /* 가로 중앙 정렬 */
     padding-bottom: 10%;
+    position: relative;
 }
 
 /* 이미지와 텍스트 그룹 스타일 */
@@ -154,7 +150,6 @@ header {
     text-align: left; /* 텍스트 정렬 */
 }
 
-/* 이미지 스타일 */
 .recent-image {
     width: 100%; /* 부모 크기 꽉 채움 */
     object-fit: cover; /* 박스 안에 이미지 맞춤 */
@@ -167,23 +162,24 @@ header {
 /* 호버 시 밝기 복구 */
 .recent-image:hover {
     filter: brightness(100%); /* 원래 밝기로 복구 */
-}
+} 
+
 
 /* 텍스트 스타일 */
 .recent-image-text {
-    font-size: 20px; /* 텍스트 크기 */
-    color: gainsboro; /* 텍스트 색상 */
-    line-height: 1.2; /* 줄 간격 줄이기 */
-    margin: 0; /* 기본 여백 제거 */
+    font-size: 20px; 
+    color: gainsboro;
+    line-height: 1.2;
+    margin: 0; 
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .recent-image-text2 {
-    font-size: 30px; /* 텍스트 크기 */
-    color: gainsboro; /* 텍스트 색상 */
-    line-height: 1.2; /* 줄 간격 줄이기 */
-    margin: 0; /* 기본 여백 제거 */
+    font-size: 30px; 
+    color: gainsboro; 
+    line-height: 1.2;
+    margin: 0;
     padding-bottom: 70px;
 }
 
@@ -191,16 +187,16 @@ header {
     .recent-image-container {
         display: grid; /* Grid 레이아웃 활성화 */
         grid-template-columns: repeat(auto-fill, minmax(55%, 1fr)); /* 컬럼 자동 조정 */
-        gap: 15px; /* 아이템 간 간격 */
-        justify-content: center; /* 가로 중앙 정렬 */
+        gap: 15px; 
+        justify-content: center;
         padding-bottom: 10%;
     }
 
     .recent-image-text {
-        font-size: 20px; /* 텍스트 크기 */
-        color: gainsboro; /* 텍스트 색상 */
-        line-height: 1.2; /* 줄 간격 줄이기 */
-        margin: 0; /* 기본 여백 제거 */
+        font-size: 20px;
+        color: gainsboro;
+        line-height: 1.2;
+        margin: 0;
         padding-top: 20px;
         padding-bottom: 20px;
     }

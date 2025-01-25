@@ -3,14 +3,10 @@ body {
     padding: 1% 8%; /* 위아래는 0, 좌우는 8% */
 }
 
-body.fade {
-    opacity: 0; /* 초기 불투명도 */
-    transition: opacity 0.8s ease-in-out; /* 천천히 나타나는 효과 */
-}
 
-body.fade.in {
-    opacity: 1; /* 화면이 완전히 나타남 */
-}
+
+
+
 
 .frame {
     /* margin: 30px 150px; */
@@ -330,7 +326,7 @@ header {
 @media screen and (max-width: 460px) {
 
     .swift-text {
-        font-size: 20px;
+        font-size: 15px;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
@@ -339,13 +335,14 @@ header {
     .swiftui-text {
         
         font-size: 17px;
-        padding-left: 39%;
+        padding-left: 38%;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
     }
 
     .Kotlin-text {
+        font-size: 15px;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
@@ -360,6 +357,7 @@ header {
     }
 
     .web-text {
+        font-size: 15px;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
@@ -367,14 +365,14 @@ header {
 
     .jhc-text {
         font-size: 17px;
-        padding-left: 41%;
+        padding-left: 40%;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
     }
 
     .data-text {
-        font-size: 20px;
+        font-size: 15px;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   
@@ -382,7 +380,8 @@ header {
 
     .r-text {
         font-size: 17px;
-        padding-left: 20%;
+        
+        padding-left: 24%;
         background-color: black; 
         color: white; 
         text-shadow: 0px 1px 5px rgba(138, 43, 226, 0.5); /* 강조 효과 */   

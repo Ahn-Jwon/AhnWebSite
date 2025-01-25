@@ -17,6 +17,13 @@ body.fade.in {
     flex-direction: column;
 }
 
+@media screen and (max-width: 460px) { 
+    body {
+        background-color: black;
+        padding: 1% 0; /* 위아래는 0, 좌우는 8% */
+    }
+}
+
 /*----1.header----*/  
 .navigator {
     display: flex;
